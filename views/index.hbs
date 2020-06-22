@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy store</title>
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+    <div class="create">
+                    <a href="/insert"style="background-color:Black" class="btn-create"><span class="icon-create"><i class="fa fa-plus" aria-hidden="true"></i></span>Add product</a>
+     </div>
+        <div class="container">
+            
+            <div class="title">
+                <h1 >Toy store</h1>
+            </div>
+            
+            <div class="list">
+                
+                <form action="">
+                    <table  border="1" >
+                        <tr class="thead">
+                            <th class="col-name">Name</th>
+                            <th class="col-id"> Price</th>
+                            <th class="col-color">Color</th>
+                            <th class="col-act">Action</th>
+                        </tr> 
+                        {{#each products}}
+                        <tr>
+                            <td >{{name}}</td>
+                            <td >{{price}}</td>
+                            <td >{{color}}</td>
+                            <td 
+                                <span class="icon"><a href="/update?id={{_id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <a href="/delete?id={{_id}}"><i class="fa fa-trash" aria-hidden="true"></i></a></span>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </form>
+            </div>
+        </div>    
+</body>
+</html>
